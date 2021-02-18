@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from './Card';
 
-export const Input = () => {
+export const Search = () => {
     const [inputValue, setInputValue] = useState('');
     const [issues, setIssues] = useState([]);
     const [filtered, setFiltered] = useState([]);
@@ -15,12 +15,12 @@ export const Input = () => {
         const json = await response.json();
         //console.log(json)
         setIssues(json);
-    }
+    };
 
     const handleChange = (e) => {
         const value = e.target.value;
         setInputValue(value);
-    }
+    };
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ export const Input = () => {
         const issuesFiltered = issues.filter(item => item.title.match(regex))
         //console.log(issuesFiltered)
         setFiltered(issuesFiltered)
-    } 
+    }; 
 
     return(
         <div>
@@ -40,9 +40,9 @@ export const Input = () => {
             </form>
             <hr />
             { filtered.map((item, i) => <Card key={i} 
-                                            title={item.title} 
-                                            state={item.state} 
-                                            labels={item.labels} />) }
+                                              title={item.title} 
+                                              state={item.state} 
+                                              labels={item.labels} />) }
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import { Input } from './components/Input'
+import { Search } from './components/Search'
 import './App.css';
 
 
@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        < Input /> 
+        <div className="App-title">Search issues in Reactjs github repository</div>
+        < Search /> 
       </header>
     </div>
   );
