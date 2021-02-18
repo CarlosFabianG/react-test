@@ -1,13 +1,12 @@
-import { findAllByTitle } from '@testing-library/react';
 import React from 'react';
 
 
 export const Card = ({title, state, labels}) => {
     return(
-        <div>
-            <div>
-                <h3>{title}</h3>
-                <p>{state}</p>
+        <div className="card" >
+            <div className="card-body">
+                <h3>Title: {title}</h3>
+                <p className="card-text">State: {state}</p>
                 <div>
                     Labels:
                     { labels.map((item, i) => <span key={i}>{item.name}</span>)}
