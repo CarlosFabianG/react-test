@@ -13,7 +13,6 @@ export const Search = () => {
     const getIssues = async () => {
         const response = await fetch('https://api.github.com/repos/facebook/react/issues')
         const json = await response.json();
-        //console.log(json)
         setIssues(json);
     };
 
@@ -26,7 +25,6 @@ export const Search = () => {
         e.preventDefault();
         var regex = new RegExp(inputValue,'i')
         const issuesFiltered = issues.filter(item => item.title.match(regex))
-        //console.log(issuesFiltered)
         setFiltered(issuesFiltered)
     }; 
 
